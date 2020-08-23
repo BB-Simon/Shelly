@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import "./App.scss";
+import Home from "./components/Home";
+import Aboute from "./components/about/Aboute";
+import Teacher from "./components/teacher/Teacher";
+import Contact from "./components/contact/Contact";
+import Events from "./components/events/Events";
+import Schedules from "./components/schedule/Schedules";
+import Singlepost from "./components/blog/Singlepost";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={Aboute} />
+        <Route path="/our-teachers" component={Teacher} />
+        <Route path="/contact-us" component={Contact} />
+        <Route path="/events" component={Events} />
+        <Route path="/schedules" component={Schedules} />
+        <Route path="/signgle-post" component={Singlepost} />
+      </Switch>
+    </>
   );
 }
 
